@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple validation</title>
+</head>
+<body>
+    <!-- Form to perform a simple validation to obtain 7 digits -->
+     <form action="">
+
+        <!-- Label related to txtInput (id = txtInput) -->
+        <label for="txtInput">Please enter your 7 digit phone number:</label>
+
+        <!-- Text Input is named as txtInput -->
+        <input type="text" name="txtInput" id="txtInput">
+
+        <!-- Button (Submit) -->
+        <button type="submit">submit</button>
+
+     </form>
+
+     <!-- JavaScript to interact with the form -->
+      <script>
+        const form = document.querySelector("form").addEventListener("submit", (event) => {
+            
+            event.preventDefault();                                             /* prevent the submit button from its typical functionality */
+
+            const result = document.getElementById("txtInput").value;           /* obtain the value stored in txtInput */
+
+            if(isNaN(result))                                                   /* If value from result is NOT a number */
+                return alert("You did not input numbers.");                     /* end the function and return */
+            
+            if(result.length !==7)                                              /* If the value send is not equivalent to 7 characters */
+                return alert("You did not input a 7-digit phone number")        /* end the function and return */
+
+                return alert("Thank you for your input");                       /* Thank the user for submitting the correct inputs */
+        })
+      </script>
+
+</body>
+</html>
